@@ -11,9 +11,9 @@ print("Welcome to tic-tac-toe!")
 def print_board():
     print()
     for key, value in board.items():
-        print(value, end=" | ")
+        print(value, end="|")
         if key % 3 == 0:
-            print("\n---------")
+            print("\n-+-+-+-+-")
 
 while True:
     user_choice = input("Enter what you would like to be (X or O): ").upper()
@@ -38,11 +38,11 @@ while True:
     game_over = False
     for a, b, c in winning_combos:
         if board[a] == user_choice and board[b] == user_choice and board[c] == user_choice:
-            print("\nYou Won!")
+            print("You Won!")
             game_over = True
             break
         elif board[a] == robot_move and board[b] == robot_move and board[c] == robot_move:
-            print("\nYou Lost!")
+            print("You Lost!")
             game_over = True
             break
             
@@ -61,7 +61,7 @@ while True:
 
     while True:
         try:
-            user_input = int(input(f"\nEnter the place for your {user_choice} (1-9): "))
+            user_input = int(input(f"Enter the place for your {user_choice} (1-9): "))
         except ValueError:
             print("Please enter a valid number between 1 and 9.")
             continue
